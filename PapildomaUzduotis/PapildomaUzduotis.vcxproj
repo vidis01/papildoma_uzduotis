@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="Metodai.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Zodis.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Metodai.h" />
+    <ClInclude Include="Zodis.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

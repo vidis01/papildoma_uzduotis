@@ -18,11 +18,17 @@
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Zodis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Metodai.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Zodis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Metodai.h">
       <Filter>Header Files</Filter>
     </ClInclude>
