@@ -1,10 +1,10 @@
 #pragma once
+#include <string>
 #include <map>
+#include "Zodis.h"
 
-void ReadFromFile(map<string, Zodis>& zodziai);
-void splitWords(std::string str, int lineNumber, map<string, Zodis>& zodziai);
+using namespace std;
 
-class Metodai
-{
-};
-
+int ReadFromFile(map<std::string, Zodis>& zodziai);
+int splitWords(std::string str, int lineNumber, map<std::string, Zodis>& zodziai);
+int WriteToFile(map<string, Zodis>& words);

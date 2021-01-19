@@ -16,10 +16,10 @@ int Zodis::getCount() {
 	return count;
 };
 
-void Zodis::setLineNumber(int lineNumber) {
-	this->lineNumber;
+void Zodis::addLineNumber(int lineNumber) {
+	lineNumbers.push_back(lineNumber);
 };
 
-int Zodis::getLineNumber() {
-	return lineNumber;
+std::list<int>& Zodis::getLineNumbers() {
+	return lineNumbers;
 };
