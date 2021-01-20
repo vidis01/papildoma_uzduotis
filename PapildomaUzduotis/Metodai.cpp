@@ -31,33 +31,43 @@ int ReadFromFile(map<string, Zodis>& words)
 	return wordsCount;
 }
 
+void addWordToMap(std::string word, int lineNumber, std::map<string, Zodis>& zodziai) {
+	if (zodziai.count(word) == 0 && word != "") {
+		Zodis zodis;
+		zodis.addLineNumber(lineNumber);
+		zodis.setWord(word);
+		zodis.incrementCount();
+		zodziai.insert(std::pair<std::string, Zodis>(word, zodis));
+	}
+	else if (word != "") {
+		zodziai[word].incrementCount();
+		zodziai[word].addLineNumber(lineNumber);
+	}
+}
+
 int splitWords(std::string str, int lineNumber, std::map<string, Zodis>& zodziai)
 {
 	std::string word = "";
 	int wordsCount = 0;
 
-	for (auto x : str)
+	for (size_t i = 0; i < str.size(); i++)
 	{
+		auto x = str[i];
 		if (x == ' ' || x == '.' || x == ',' || x == '-' || x == '?' || x == '!' || x == '"' || x == '\'' || x == ':' || x == ';' || x == '(' || x ==')')
 		{
-			if (word != "" && zodziai.count(word) == 0) {
-				Zodis zodis;
-				zodis.addLineNumber(lineNumber);
-				zodis.setWord(word);
-				zodis.incrementCount();
-				zodziai.insert(std::pair<std::string, Zodis>(word, zodis));
-				//std::cout << word << endl; //ispausdina i ekrana zodi, testavimosi tikslais
-				++wordsCount;
-			}
-			else {
-				zodziai[word].incrementCount();
-				++wordsCount;
-			}
+			addWordToMap(word, lineNumber, zodziai);
+			++wordsCount;
 			word = "";
 		}
 		else {
 			word = word + x;
-		}
+			
+			if (i == str.size()-1 && word != "")
+			{
+				addWordToMap(word, lineNumber, zodziai);
+				++wordsCount;
+			}
+		}		
 	}
 	return wordsCount;
 }
@@ -74,10 +84,11 @@ int WriteToFile(map<string, Zodis>& words) {
 		{
 			string eilutes = "";
 			for (auto number : word.second.getLineNumbers()) {
-				eilutes += " " + number;
+				eilutes = eilutes + " " + std::to_string(number);
 			}
-			outputStream << left << setw(15) << word.first << "\t" << setw(20) << "Pasikartoja:\t" << word.second.getCount() << setw(20) << "Siose eilutese:\t" << eilutes << endl;
+			outputStream << left << setw(15) << word.first << "\t"  << "Pasikartoja:\t" << word.second.getCount() << "     Siose eilutese:\t" << eilutes << endl;
 			++wordsCount;
+			eilutes = "";
 		}		
 	}
 	return wordsCount;

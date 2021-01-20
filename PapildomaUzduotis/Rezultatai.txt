@@ -1,0 +1,11 @@
+class          	Pasikartoja:	2     Siose eilutese:	 3 5
+condimentum    	Pasikartoja:	2     Siose eilutese:	 1 3
+curae          	Pasikartoja:	2     Siose eilutese:	 3 5
+eget           	Pasikartoja:	2     Siose eilutese:	 3 5
+elementum      	Pasikartoja:	3     Siose eilutese:	 3 3 5
+eu             	Pasikartoja:	2     Siose eilutese:	 3 5
+lacus          	Pasikartoja:	2     Siose eilutese:	 3 3
+magna          	Pasikartoja:	3     Siose eilutese:	 3 5 5
+mauris         	Pasikartoja:	2     Siose eilutese:	 3 5
+potenti        	Pasikartoja:	2     Siose eilutese:	 3 3
+sollicitudin   	Pasikartoja:	2     Siose eilutese:	 3 3

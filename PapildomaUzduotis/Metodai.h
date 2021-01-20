@@ -8,3 +8,4 @@ using namespace std;
 int ReadFromFile(map<std::string, Zodis>& zodziai);
 int splitWords(std::string str, int lineNumber, map<std::string, Zodis>& zodziai);
 int WriteToFile(map<string, Zodis>& words);
+void addWordToMap(std::string word, int lineNumber, std::map<string, Zodis>& zodziai);
