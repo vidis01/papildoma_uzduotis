@@ -25,4 +25,5 @@ int main()
     std::cout << "Tekstinio failo Tekstas.txt nuskaitytu nuorody skaicius: " << wordsCount << "\n";
     std::cout << "Rastos nuorodos, issaugotos faile \"Nuorodos.txt:\" \n";
 
+    system("pause");
 }
